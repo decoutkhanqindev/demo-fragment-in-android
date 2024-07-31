@@ -9,6 +9,11 @@ import com.example.demofragmentinandroid.databinding.FragmentFirstBinding
 class FirstFragment : BaseFragment() {
     private var _binding: FragmentFirstBinding? = null
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        logMessage("name is ${arguments?.getString("name")}")
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
