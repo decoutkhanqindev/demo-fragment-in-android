@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.demofragmentinandroid.databinding.FragmentFirstBinding
+import com.example.demofragmentinandroid.databinding.FragmentSecondBinding
 
 class SecondFragment : BaseFragment() {
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: FragmentSecondBinding? = null
     private val binding = _binding!!
 
     override fun onCreateView(
@@ -16,7 +17,7 @@ class SecondFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         logMessage("onCreateView called")
-        _binding = FragmentFirstBinding.inflate(
+        _binding = FragmentSecondBinding.inflate(
             /* inflater = */ inflater,
             /* parent = */ container,
             /* attachToParent = */ false

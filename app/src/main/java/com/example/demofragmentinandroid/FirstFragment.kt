@@ -4,13 +4,38 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.demofragmentinandroid.databinding.FragmentFirstBinding
 
-class FirstFragment: BaseFragment() {
+class FirstFragment : BaseFragment() {
+    private var _binding: FragmentFirstBinding? = null
+    private val binding = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+    ): View {
+        logMessage("onCreateView called")
+        _binding = FragmentFirstBinding.inflate(
+            /* inflater = */ inflater,
+            /* parent = */ container,
+            /* attachToParent = */ false
+        )
+        return binding.root
+    }
+
+    // lam viec voi view
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btn.text = "Click me <3"
+        binding.btn.setOnClickListener {
+            logMessage("Button clicked")
+        }
+    }
+
+    // k nen tham chieu toi view nua
+    override fun onDestroyView() {
+        _binding = null // huy binding -> tranh memory leaks
+        super.onDestroyView()
     }
 }
