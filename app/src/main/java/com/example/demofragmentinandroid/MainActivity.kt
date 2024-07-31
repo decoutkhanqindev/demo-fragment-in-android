@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 //                add(binding.fragmentContainerView.id, FirstFragment().apply {
 //                    arguments = bundleOf("name" to "Minh Khang", "age" to "20")
 //                })
-
+                setReorderingAllowed(true)
                 add<FirstFragment>(
                     containerViewId = binding.fragmentContainerView.id,
                     args = bundleOf("name" to "Minh Khang", "age" to "20")

@@ -47,6 +47,7 @@ class FirstFragment : BaseFragment() {
 //                .commit()
 
             parentFragmentManager.commit {
+                setReorderingAllowed(true)
                 replace<SecondFragment>(
                     containerViewId = R.id.fragmentContainerView,
                     args = bundleOf("source" to "first fragment "),
