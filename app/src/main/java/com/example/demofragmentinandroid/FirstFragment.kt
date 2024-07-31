@@ -8,7 +8,6 @@ import com.example.demofragmentinandroid.databinding.FragmentFirstBinding
 
 class FirstFragment : BaseFragment() {
     private var _binding: FragmentFirstBinding? = null
-    private val binding = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,14 +20,14 @@ class FirstFragment : BaseFragment() {
             /* parent = */ container,
             /* attachToParent = */ false
         )
-        return binding.root
+        return _binding!!.root
     }
 
     // lam viec voi view
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btn.text = "Click me <3"
-        binding.btn.setOnClickListener {
+        _binding!!.btn.text = "Click me <3"
+        _binding!!.btn.setOnClickListener {
             logMessage("Button clicked")
         }
     }

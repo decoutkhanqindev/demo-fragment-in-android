@@ -9,7 +9,6 @@ import com.example.demofragmentinandroid.databinding.FragmentSecondBinding
 
 class SecondFragment : BaseFragment() {
     private var _binding: FragmentSecondBinding? = null
-    private val binding = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,14 +21,14 @@ class SecondFragment : BaseFragment() {
             /* parent = */ container,
             /* attachToParent = */ false
         )
-        return binding.root
+        return _binding!!.root
     }
 
     // lam viec voi view
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btn.text = "Click me <3"
-        binding.btn.setOnClickListener {
+        _binding!!.btn.text = "Click me <3"
+        _binding!!.btn.setOnClickListener {
             logMessage("Button clicked")
         }
     }
