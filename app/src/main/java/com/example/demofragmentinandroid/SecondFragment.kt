@@ -36,7 +36,7 @@ class SecondFragment : BaseFragment() {
             parentFragmentManager.commit {
                 replace<ThirdFragment>(
                     containerViewId = R.id.fragmentContainerView,
-                    args = bundleOf("source" to "second fragment ")
+                    args = bundleOf("source" to "second fragment "),
                 )
                 addToBackStack("2 to 3")
             }

@@ -49,7 +49,7 @@ class FirstFragment : BaseFragment() {
             parentFragmentManager.commit {
                 replace<SecondFragment>(
                     containerViewId = R.id.fragmentContainerView,
-                    args = bundleOf("source" to "first fragment ")
+                    args = bundleOf("source" to "first fragment "),
                 )
                 // 1 -> 2 push
                 // 2 -> 1 pop
