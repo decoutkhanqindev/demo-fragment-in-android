@@ -34,7 +34,7 @@ class SecondFragment : BaseFragment() {
         _binding!!.btn.setOnClickListener {
             logMessage("Button clicked")
             parentFragmentManager.commit {
-                setReorderingAllowed
+                setReorderingAllowed(true)
                 replace<ThirdFragment>(
                     containerViewId = R.id.fragmentContainerView,
                     args = bundleOf("source" to "second fragment "),
