@@ -35,6 +35,8 @@ class ThirdFragment : BaseFragment() {
         _binding!!.btn.setOnClickListener {
             logMessage("Button clicked")
 //            parentFragmentManager.popBackStack() // 3 to 2
+            // flag 0 = 3 -> 2
+            // POP_BACK_STACK_INCLUSIVE = 3 -> 1
             parentFragmentManager.popBackStack("1 to 2", FragmentManager.POP_BACK_STACK_INCLUSIVE) // 3 to 1
         }
     }

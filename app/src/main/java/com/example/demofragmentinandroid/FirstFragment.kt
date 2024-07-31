@@ -51,6 +51,8 @@ class FirstFragment : BaseFragment() {
                     containerViewId = R.id.fragmentContainerView,
                     args = bundleOf("source" to "first fragment ")
                 )
+                // 1 -> 2 push
+                // 2 -> 1 pop
                 addToBackStack("1 to 2")
             }
         }
