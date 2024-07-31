@@ -33,13 +33,7 @@ class ThirdFragment : BaseFragment() {
         _binding!!.btn.text = "Click me <3"
         _binding!!.btn.setOnClickListener {
             logMessage("Button clicked")
-            parentFragmentManager.commit {
-                replace<ThirdFragment>(
-                    containerViewId = R.id.fragmentContainerView,
-                    args = bundleOf("source" to "first fragment ")
-                )
-                addToBackStack("2 to 3")
-            }
+            parentFragmentManager.popBackStack() // 3 to 2
         }
     }
 
