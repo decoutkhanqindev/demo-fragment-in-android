@@ -22,7 +22,7 @@ abstract class BaseFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         logMessage("onCreate: savedInstanceState=$savedInstanceState")
-        logMessage("onCreate: arguments=${arguments?.keySet()}")
+        logMessage("onCreate: arguments=${arguments}")
     }
 
     @CallSuper
