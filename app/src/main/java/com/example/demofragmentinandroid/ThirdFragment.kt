@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.example.demofragmentinandroid.databinding.FragmentFirstBinding
@@ -33,7 +34,8 @@ class ThirdFragment : BaseFragment() {
         _binding!!.btn.text = "Click me <3"
         _binding!!.btn.setOnClickListener {
             logMessage("Button clicked")
-            parentFragmentManager.popBackStack() // 3 to 2
+//            parentFragmentManager.popBackStack() // 3 to 2
+            parentFragmentManager.popBackStack("1 to 2", FragmentManager.POP_BACK_STACK_INCLUSIVE) // 3 to 1
         }
     }
 
