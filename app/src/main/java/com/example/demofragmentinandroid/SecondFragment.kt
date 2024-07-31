@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import com.example.demofragmentinandroid.databinding.FragmentFirstBinding
 import com.example.demofragmentinandroid.databinding.FragmentSecondBinding
 
@@ -30,6 +33,13 @@ class SecondFragment : BaseFragment() {
         _binding!!.btn.text = "Click me <3"
         _binding!!.btn.setOnClickListener {
             logMessage("Button clicked")
+            parentFragmentManager.commit {
+                replace<ThirdFragment>(
+                    containerViewId = R.id.fragmentContainerView,
+                    args = bundleOf("source" to "first fragment ")
+                )
+                addToBackStack("2 to 3")
+            }
         }
     }
 
